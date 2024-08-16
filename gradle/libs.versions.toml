@@ -18,9 +18,8 @@ activity = "1.9.1"
 constraintlayout = "2.1.4"
 retrofit = "2.11.0"
 roomRuntime = "2.6.1"
-loggingInterceptor = "4.11.0"
+loggingInterceptor = "4.12.0"
 hiltAndroid = "2.51"
-hiltAndroidGradlePlugin = "2.51.1"
 googleDevtoolsKsp = "2.0.0-1.0.23"
 
 [libraries]
@@ -49,7 +48,6 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
