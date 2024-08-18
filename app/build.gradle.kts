@@ -26,6 +26,7 @@ android {
     lint {
         baseline = file("lint-baseline.xml")
     }
+
     buildTypes {
         debug {
             buildConfigField("String", "BASE_API", "\"${System.getenv("Base_API") ?: "https://api.github.com/"}\"")
