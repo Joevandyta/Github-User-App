@@ -13,6 +13,7 @@ import com.jovan.github_user_app.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")
+@OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class, kotlinx.coroutines.FlowPreview::class)
 @AndroidEntryPoint
 class SplashScreenActivity : AppCompatActivity() {
     private val viewModel : SplashViewModel by viewModels()
