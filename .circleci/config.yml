@@ -23,6 +23,11 @@ jobs:
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
+      - run:
+          name: Run Lint
+          command: |
+                  ./gradlew lintDebug || true
+
       - save_cache:
           key: 'android-orb-v1-{{ epoch }}'
           paths:
