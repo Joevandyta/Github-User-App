@@ -16,7 +16,9 @@ class FollowersViewModel @Inject constructor(private val githubUseCase: GithubUs
 
     fun setListFollowers(username: String) {
         viewModelScope.launch {
-            listFollowers.postValue(githubUseCase.getFollowers(username))
+            githubUseCase.getFollowers(username).let {
+                listFollowers.postValue(it)
+            }
         }
     }
 
