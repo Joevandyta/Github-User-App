@@ -17,8 +17,10 @@ class FollowingViewModel @Inject constructor(private val githubUseCase: GithubUs
 
     fun setListFollowing(username: String) {
         viewModelScope.launch {
-            listFollowing.postValue(githubUseCase.getFollowing(username))
-        }
+            githubUseCase.getFollowing(username).let {
+                listFollowing.postValue(it)
+            }
+    }
     }
 
     fun getListFollowing(): LiveData<List<User>> {
