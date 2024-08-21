@@ -11,7 +11,15 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+# Keep all classes in the core module
+-keep class com.jovan.core.** { *; }
 
+# Keep all Dagger/Hilt generated classes
+-keep class dagger.hilt.** { *; }
+-keep class * extends dagger.hilt.internal.GeneratedComponent { *; }
+-keep class * extends dagger.hilt.internal.GeneratedComponentManager { *; }
+-keep class * extends dagger.hilt.internal.GeneratedEntryPoint { *; }
+-keep class * implements dagger.hilt.internal.GeneratedComponent { *; }
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
 #-keepattributes SourceFile,LineNumberTable

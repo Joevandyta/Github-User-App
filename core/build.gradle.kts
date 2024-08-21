@@ -27,11 +27,17 @@ android {
             buildConfigField("String", "BASE_API", "\"${System.getenv("Base_API") ?: "https://api.github.com/"}\"")
             buildConfigField("String", "API_KEY", "\"${System.getenv("API_Key") ?: "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"}\"")
 
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
         release {
             buildConfigField("String", "BASE_API", "\"${System.getenv("Base_API") ?: "https://api.github.com/"}\"")
             buildConfigField("String", "API_KEY", "\"${System.getenv("API_Key") ?: "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"}\"")
-            isMinifyEnabled = false
+
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -82,4 +88,8 @@ dependencies {
 //    dagger hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+//    database encription
+    implementation(libs.android.database.sqlcipher)
+    implementation(libs.androidx.sqlite.ktx)
 }
