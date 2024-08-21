@@ -21,7 +21,6 @@ class NetworkModule {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
-
     @Provides
     fun provideOkHttpClient(): OkHttpClient {
         val hostname = "api.github.com"
