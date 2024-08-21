@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_bar, menu)
         return true
     }
-    fun setRandomUsers(): String {
+    private fun setRandomUsers(): String {
         val alphabet = ('a'..'z').toList()
         val randomIndex = Random.nextInt(alphabet.size)
         val randomUsers = alphabet[randomIndex].toString()

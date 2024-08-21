@@ -50,9 +50,10 @@ class GithubRepository @Inject constructor(
 
     override fun deleteFavoriteUser(userEntity: User) {
         CoroutineScope(Dispatchers.IO).launch {
-            val userList = DataMapper.mapUserDomainToEntity(userEntity)
+            userEntity.let {
+                val userList = DataMapper.mapUserDomainToEntity(it)
 
-            localDataSource.delete(userList)
+                localDataSource.delete(userList)}
         }
     }
 

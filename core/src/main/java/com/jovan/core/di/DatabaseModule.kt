@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class DatabaseModule {
 
-    private val passphrase: ByteArray = SQLiteDatabase.getBytes("dicoding".toCharArray())
+    private val passphrase: ByteArray = SQLiteDatabase.getBytes("githubuserapp".toCharArray())
     val factory = SupportFactory(passphrase)
 
     @Singleton
