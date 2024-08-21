@@ -1,5 +1,6 @@
 [versions]
-agp = "8.5.1"
+agp = "8.5.2"
+androidDatabaseSqlcipher = "4.4.0"
 datastorePreferences = "1.1.1"
 fragmentKtx = "1.8.2"
 glide = "4.16.0"
@@ -21,8 +22,11 @@ roomRuntime = "2.6.1"
 loggingInterceptor = "4.12.0"
 hiltAndroid = "2.51"
 googleDevtoolsKsp = "2.0.0-1.0.23"
+leakcanaryAndroid = "2.10"
+sqliteKtx = "2.4.0"
 
 [libraries]
+android-database-sqlcipher = { module = "net.zetetic:android-database-sqlcipher", version.ref = "androidDatabaseSqlcipher" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
@@ -32,6 +36,7 @@ androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-view
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+androidx-sqlite-ktx = { module = "androidx.sqlite:sqlite-ktx", version.ref = "sqliteKtx" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -48,6 +53,7 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanaryAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
