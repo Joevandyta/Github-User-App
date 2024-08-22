@@ -6,15 +6,10 @@ import com.jovan.core.data.source.remote.network.ApiService
 import com.jovan.core.data.source.remote.response.DetailUserResponse
 import com.jovan.core.data.source.remote.response.UserListResponse
 import com.jovan.core.data.source.remote.response.UserResponse
-
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.debounce
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.mapLatest
 import javax.inject.Inject
 import javax.inject.Singleton
 

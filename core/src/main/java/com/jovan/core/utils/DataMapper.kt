@@ -12,7 +12,7 @@ object DataMapper {
 
 
     //Details User
-    fun mapDetailUserResponseToDomain(input: DetailUserResponse) = DetailUser(
+     fun mapDetailUserResponseToDomain(input: DetailUserResponse) = DetailUser(
         login = input.login,
         id = input.id,
         avatarUrl = input.avatarUrl,

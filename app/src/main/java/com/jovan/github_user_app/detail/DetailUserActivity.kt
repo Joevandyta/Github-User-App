@@ -52,7 +52,7 @@ class DetailUserActivity : AppCompatActivity() {
                 tvDetailName.text = it.name
                 tvUsernameDetail.text = it.login
                 tvFollowingDetail.text = getString(R.string.following, it.following)
-                tvFollowerDetail.text = getString(R.string.followers, it.followers)
+                tvFollowerDetail.text = resources.getQuantityString(R.plurals.followers, it.followers, it.followers)
 
                 Glide.with(this@DetailUserActivity)
                     .load(it.avatarUrl)
