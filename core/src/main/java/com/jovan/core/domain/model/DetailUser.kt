@@ -6,7 +6,7 @@ data class DetailUser(
     val avatarUrl: String,
     val followersUrl: String,
     val followingUrl: String,
-    val name: String,
+    val name: String?,
     val followers: Int,
     val following: Int
 )

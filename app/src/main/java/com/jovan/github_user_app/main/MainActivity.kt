@@ -31,7 +31,7 @@ import kotlin.random.Random
 @FlowPreview
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private val viewModel : MainViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: UserAdapter
 
@@ -44,18 +44,20 @@ class MainActivity : AppCompatActivity() {
         bindAdapter()
 
         viewModel.searchQuery.observe(this) {
-            when(it){
+            when (it) {
                 is ApiResponse.Success -> {
                     onProgressBar(false)
-                     Log.d("MainActivity", "Success: ${it.data.items}")
+                    Log.d("MainActivity", "Success: ${it.data.items}")
                     adapter.setList(it.data.items)
                 }
+
                 is ApiResponse.Empty -> {
                     onProgressBar(false)
                     Log.d("MainActivity", "Empty: $it")
                     showToast(this, "User Tidak Ditemukan")
                     adapter.emptyList()
                 }
+
                 is ApiResponse.Error -> {
                     onProgressBar(false)
                     showToast(this, "Terjadi Kesalahan")
@@ -77,11 +79,10 @@ class MainActivity : AppCompatActivity() {
         adapter = UserAdapter()
         adapter.setOnItemClickCallBack(object : UserAdapter.OnItemClickCallBack {
             override fun onItemClicked(data: User) {
-                Intent(this@MainActivity, DetailUserActivity::class.java).also {
-                    it.putExtra(DetailUserActivity.EXTRA_USERNAME, data.login)
-                    it.putExtra(DetailUserActivity.EXTRA_ID, data.id)
-                    startActivity(it)
-                }
+                val intent = Intent(this@MainActivity, DetailUserActivity::class.java)
+                intent.putExtra(DetailUserActivity.EXTRA_USERNAME, data.login)
+                intent.putExtra(DetailUserActivity.EXTRA_ID, data.id)
+                startActivity(intent)
             }
         })
 
@@ -124,6 +125,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_bar, menu)
         return true
     }
+
     private fun setRandomUsers(): String {
         val alphabet = ('a'..'z').toList()
         val randomIndex = Random.nextInt(alphabet.size)
@@ -131,6 +133,7 @@ class MainActivity : AppCompatActivity() {
 
         return randomUsers
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {
