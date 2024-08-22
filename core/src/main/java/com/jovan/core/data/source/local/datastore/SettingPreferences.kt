@@ -14,16 +14,16 @@ import javax.inject.Singleton
 val Context.dataStore by preferencesDataStore(name = "settings")
 @Singleton
 class SettingPreferences @Inject constructor(private val dataStore: DataStore<Preferences>) {
-    val THEME_KEY = booleanPreferencesKey("theme_setting")
+    private val themeKey = booleanPreferencesKey("theme_setting")
     fun getThemeSetting(): Flow<Boolean> {
         return dataStore.data.map { preferences ->
-            preferences[THEME_KEY] ?: false
+            preferences[themeKey] ?: false
         }
     }
 
     suspend fun saveThemeSetting(isDarkModeActive: Boolean) {
         dataStore.edit { preferences ->
-            preferences[THEME_KEY] = isDarkModeActive
+            preferences[themeKey] = isDarkModeActive
         }
     }
 }
