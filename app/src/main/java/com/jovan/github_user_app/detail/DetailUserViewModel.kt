@@ -20,8 +20,10 @@ class DetailUserViewModel @Inject constructor(private val githubUseCase: GithubU
 
     fun setDetailUser(username: String) {
         viewModelScope.launch {
-            githubUseCase.getUserDetail(username).let {
-                user.postValue(it)
+            username.let {
+                githubUseCase.getUserDetail(username).let {
+                    user.postValue(it)
+                }
             }
         }
     }
